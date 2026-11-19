@@ -1,2 +1,2 @@
 # Linktree-portfolio
-Just a small linktree website.
+Just a small linktree website for a class.
