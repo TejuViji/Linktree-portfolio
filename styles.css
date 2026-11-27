@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --ink: #20203d;
+    --paper: #fff9e8;
+    --blue: #79d5ff;
+    --mint: #8aefd2;
+    --pink: #ffacd1;
+    --yellow: #ffe66d;
+    --purple: #c1a8ff;
+}
 
 * {
     box-sizing: border-box;
@@ -7,80 +17,224 @@
 }
 
 body {
-    font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff99f;
-    color: #334155;
-    line-height: 1.6;
-    padding: 2.5rem 1.25rem;
+    min-height: 100vh;
+    padding: 3rem 1.25rem;
+    background-color: var(--paper);
+    background-image:
+        linear-gradient(rgba(32, 32, 61, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(32, 32, 61, 0.045) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--ink);
+    font-family: 'Space Mono', 'Courier New', monospace;
+    line-height: 1.65;
 }
 
 main {
-    max-width: 900px;
+    display: grid;
+    gap: 1.5rem;
+    max-width: 860px;
     margin: 0 auto;
 }
 
-/* Main Name Banner */
-#title {
-    text-align: center;
-    font-size: 2.75rem;
-    font-weight: 700;
-    color: #2b3a55;
-    margin-bottom: 2.5rem;
-    padding: 1.25rem 2rem;
-    background-color: #ffcbcb;
-    border-radius: 25px;
-    border: 2px solid #e6ebf5;
-    box-shadow: 0 8px 20px rgba(149, 157, 165, 0.08);
+#title-card,
+.Section {
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    border: 3px solid var(--ink);
+    border-radius: 0;
+    box-shadow: 6px 6px 0 var(--ink);
 }
 
 #title-card {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #97c7ee;
-    border-radius: 20px;
-    border: 2px solid #0e104a;
-    box-shadow: 0 6px 18px 1px rgba(149, 157, 165, 0.08);
-    width: 100%;
-    height: 12rem;       
-    box-sizing: border-box; 
-    overflow: hidden;
+    background-color: var(--blue);
 }
 
-/* Large Playful Boxes (targets both class="Section" and id="Section") */
+#title {
+    display: inline;
+    padding: 0.08em 0.18em;
+    background: var(--yellow);
+    box-decoration-break: clone;
+    color: var(--ink);
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: clamp(1rem, 3.6vw, 1.8rem);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+#title-card h4 {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+#title-card h4:first-of-type {
+    margin-top: 1.1rem;
+}
+
+#title-card h4 a {
+    color: #152b66;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+#title-card h2 {
+    margin-top: 1.25rem;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+#title-card ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.65rem;
+    list-style: none;
+}
+
+#title-card li {
+    padding: 0.3rem 0.75rem;
+    border: 2px solid var(--ink);
+    background: #fffdf6;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
 .Section {
-    min-height: 260px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    border-radius: 14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 160ms steps(3, end), box-shadow 160ms steps(3, end);
 }
 
 .Section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+    transform: translate(-2px, -2px);
+    box-shadow: 9px 9px 0 var(--ink);
 }
 
-/* Light Pastel Theme for Each Box */
-main div:nth-of-type(1) {
-    background-color: #eef9f5; /* Soft Mint */
-    border: 2px solid #cceee2;
+.social-section {
+    background-color: var(--mint);
 }
 
-main div:nth-of-type(2) {
-    background-color: #fff3ee; /* Soft Peach */
-    border: 2px solid #ffd8c7;
+.project-section {
+    background-color: var(--pink);
 }
 
-main div:nth-of-type(3) {
-    background-color: #f2f0ff; /* Soft Lavender */
-    border: 2px solid #dcd7ff;
-}
-
-/* Section Titles */
 .section-header {
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: #3b4963;
     margin-bottom: 1rem;
+    color: var(--ink);
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: clamp(0.9rem, 2.4vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.social-media {
+    font-size: 1rem;
+}
+
+.social-media a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--ink);
+    background: var(--yellow);
+    box-shadow: 3px 3px 0 var(--ink);
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 120ms steps(2, end), box-shadow 120ms steps(2, end);
+}
+
+.social-media:nth-child(1) a {
+    background: #ff9671;
+}
+
+.social-media:nth-child(2) a {
+    background: var(--yellow);
+}
+
+.social-media:nth-child(3) a {
+    background: var(--blue);
+}
+
+.social-media:nth-child(4) a {
+    background: var(--purple);
+}
+
+.social-media a:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+a:focus-visible {
+    outline: 3px dashed var(--ink);
+    outline-offset: 4px;
+}
+
+.project-card {
+    max-width: 600px;
+    padding: 1.4rem;
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 4px 4px 0 var(--ink);
+}
+
+.project-card-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.65rem;
+}
+
+.projects {
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.projects a {
+    color: #7a2457;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.project-status {
+    padding: 0.2rem 0.65rem;
+    border: 2px solid var(--ink);
+    background: var(--yellow);
+    color: var(--ink);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.project-descriptions {
+    color: #30304a;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 1.5rem 1rem 2rem;
+    }
+
+    .Section,
+    #title-card {
+        padding: 1.35rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
 }
